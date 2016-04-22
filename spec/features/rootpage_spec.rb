@@ -3,4 +3,8 @@ describe "the front page view", :type => :feature do
     visit '/'
     expect(page).to have_content 'Coming Soon!'
   end
+  it "has a login button" do
+  	visit '/'
+  	expect(page).to have_selector(:link_or_button, 'Login')
+  end
 end
