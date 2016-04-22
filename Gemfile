@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+ruby "2.3.0"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
@@ -49,3 +49,6 @@ group :test do
   gem 'capybara'
   gem 'rspec-rails', '~> 3.4', '>= 3.4.2'
 end
+
+gem 'devise'
+gem 'omniauth-github'
