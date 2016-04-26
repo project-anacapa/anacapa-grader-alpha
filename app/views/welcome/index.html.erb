@@ -6,11 +6,9 @@
 <body>
     <p id="comingSoon">Coming Soon!</p>
      <% if current_user %>
-       <button id="logoutButton">Logout</button>
+       <%= link_to "Logout", destroy_user_session_path, :method => :delete %>
      <% else %>
-       <%= link_to  user_github_omniauth_authorize_path do %>
-          Login
-        <% end %>
+       <%= link_to "Login", user_github_omniauth_authorize_path  %>
      <% end %>
 </body>
 </html>

@@ -22,5 +22,13 @@ describe "login process", :type => :feature do
 		click_link "Login"
 		expect(page).to have_selector(:link_or_button, 'Logout')
 	end
+
+	it "should log user in and out" do
+		visit '/'
+		click_link "Login"
+		expect(page).to have_selector(:link_or_button, 'Logout')
+		click_link "Logout"
+		expect(page).to have_selector(:link_or_button, 'Login')
+	end
 end
 
