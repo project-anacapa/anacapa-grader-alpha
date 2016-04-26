@@ -1,3 +1,5 @@
+import request
+
 describe "the front page view", :type => :feature do
   it "shows the 'coming soon' message on the front page" do
     visit '/'
