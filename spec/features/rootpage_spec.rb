@@ -1,4 +1,4 @@
-
+require 'rails_helper.rb'
 
 describe "the front page view", :type => :feature do
   it "shows the 'coming soon' message on the front page" do
@@ -13,8 +13,8 @@ end
 
 describe "login process", :type => :feature do
 	before do 
-		@request.env["devise.mapping"] = Devise.mappings[:user]
-		@request.env["omniauth.auth"] = OmniAuth.config.mock_auth[:github]
+		Rails.application.env_config["devise.mapping"] = Devise.mappings[:user]
+		Rails.application.env_config["omniauth.auth"] = OmniAuth.config.mock_auth[:github]
 
 	end
 	it "should log user in" do
