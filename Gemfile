@@ -52,3 +52,6 @@ end
 
 gem 'devise'
 gem 'omniauth-github'
+
+# For doing .env file stuff for omniauth, for example:
+gem 'dotenv-rails', :groups => [:development, :test]   

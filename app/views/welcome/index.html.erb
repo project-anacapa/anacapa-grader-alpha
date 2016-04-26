@@ -5,6 +5,12 @@
 </head>
 <body>
     <p id="comingSoon">Coming Soon!</p>
-    <button id="loginButton">Login</button>
+     <% if current_user %>
+       <button id="logoutButton">Logout</button>
+     <% else %>
+       <%= link_to user_omniauth_authorize_path(:github) do %>
+          Login
+        <% end %>
+     <% end %>
 </body>
 </html>
