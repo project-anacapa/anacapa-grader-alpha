@@ -1,5 +1,12 @@
 language: ruby
 rvm:
-  - 2.3.0
+- 2.3.0
 script:
-  - bundle exec rspec
+- bundle exec rspec
+deploy:
+  provider: heroku
+  api_key:
+    secure: drbGo+louNAfgZZ5XDb2YqD2QPGhgTrSioxki3qlgFSGwIgDXty8gtbXbVme//S1HXrR+1M4eRdEzryF6/NnRURq8LX27KaRcb8OtIWWTUL+z4rSNacPjbXyGZqvn7h+IqNbO9OeV2dKd2Kv5oJVT9ral0SsFxWKRENlNo/6IHOUU0cmwCCfEI2puDZ5r4bcYul20+FYxdD4Rox18v7klYe+2k94Nh+FFwbNdtZWcEQxtQUjC2Fr4Hru59G1RIp0Pimmhuss+F7s4YLpVCCKB2WstVeiU1dNx5/ApBjNc1w3ZOwAS0TK4pe1U8YODPJuA/x6IxcFwlGwhRYWgtSYmnpPeybhzEvGSva8DPUSfgxDzyzKGJWO/wNmqfEf3hrgn0HDm/6Gv3NB4FCJCwdyB0lwcEMb0oUMdJRy0GBa89BhxLwQNhBiX5VmTsI+dnnCVgavYd0Z646R0VLMBx/2UVJ/qJHLlVDmPEEgYhB8N2zxj2W0jYjIj7ItCAh+NezLEN6Jl2wvu7hQmnMxtSb5iEfzQc8dSeVLendeq6WC0PMP0ms1D9lBquYJ80FbDI3uht1feB41mbh81cKtyi82SkDP0dt5kCf5ZLst6A+bP/AmCzqpQfZAhRZlJAwkWYF2xIsJSupAeBkBJ8TNh5W4/24oSaFYkAqvIR1R4PS4GqA=
+  app: anacapa-grader-alpha
+  on:
+    repo: project-anacapa/anacapa-grader-alpha
