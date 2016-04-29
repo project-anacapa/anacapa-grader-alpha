@@ -11,3 +11,9 @@ Problems with nokogiri on a Mac?  Try:
 ```
 env ARCHFLAGS='-arch x86_64' bundle install --path vendor/bundle
 ```
+
+
+
+Configuration of rspec testing for Omniauth:
+
+https://github.com/intridea/omniauth/wiki/Integration-Testing
