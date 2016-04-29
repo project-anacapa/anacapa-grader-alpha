@@ -4,7 +4,7 @@ rvm:
 script:
 - bundle exec rspec
 before_script:
-- psql -c 'create database anacapa-grader-alpha-test;' -U postgres
+- psql -c 'create database anacapa_grader_alpha_test;' -U postgres
 - RAILS_ENV=test bundle exec db:test:prepare
 deploy:
   provider: heroku

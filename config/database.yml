@@ -11,15 +11,15 @@ default: &default
 
 development:
   <<: *default
-  database: anacapa-grader-alpha-dev
+  database: anacapa_grader_alpha_dev
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: anacapa-grader-alpha-test
+  database: anacapa_grader_alpha_test
 
 production:
   <<: *default
-  database: anacapa-grader-alpha-prod
+  database: anacapa_grader_alpha_prod
