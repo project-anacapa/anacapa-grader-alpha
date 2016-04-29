@@ -3,6 +3,9 @@ rvm:
 - 2.3.0
 script:
 - bundle exec rspec
+before_script:
+- psql -c 'create database anacapa-grader-alpha-test;' -U postgres
+- RAILS_ENV=test bundle exec db:test:prepare
 deploy:
   provider: heroku
   api_key:
