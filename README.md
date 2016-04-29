@@ -4,4 +4,7 @@ Alpha version of first usable version of Anacapa Grader.    This repo should be 
  
 On Travis-CI: https://travis-ci.org/project-anacapa/anacapa-grader-alpha
 
+On Heroku: https://anacapa-grader-alpha.herokuapp.com
+
 [![Build Status](https://travis-ci.org/project-anacapa/anacapa-grader-alpha.svg?branch=master)](https://travis-ci.org/project-anacapa/anacapa-grader-alpha)
+
