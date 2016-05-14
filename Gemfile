@@ -48,6 +48,7 @@ end
 group :test do
   gem 'capybara'
   gem 'rspec-rails', '~> 3.4', '>= 3.4.2'
+  gem "factory_girl_rails", "~> 4.0"
 end
 
 gem 'devise'
@@ -57,3 +58,5 @@ gem 'omniauth-github'
 gem 'dotenv-rails', :groups => [:development, :test]
 gem 'cancancan'
 gem 'rolify'
+
+gem 'hirb', '0.7.3'
