@@ -37,9 +37,13 @@ class AdminPanelController < ApplicationController
     else
       user.remove_role "admin"
     end
-
+    #
+    # respond_to do |format|
+    #   format.json { render json: ["data" => "Setting is_admin of " + user.name + " to " + toggle_to + " and is now " + user.has_role?(:admin)]}
+    # end
     respond_to do |format|
-      format.json { render json: ["data" => "Setting is_admin of " + user.name + " to " + toggle_to + " and is now " + user.has_role?(:admin)]}
+      msg = { :status => "ok", :message => "Success!" }
+      format.json  { render :json => msg } # don't do msg.to_json
     end
   end
 
