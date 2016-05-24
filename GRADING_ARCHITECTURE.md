@@ -1,7 +1,7 @@
 # Anacapa-Github-Hooks
 
 1) Push event on grader-labXX repo with anacapa.json present
-- Kick off A
+- Kick off G
     
 2) Push event on labXX-username
 - Add username, labXX to pending jobs table in database
@@ -9,12 +9,16 @@
 
 # Anacapa-Sidekiq-Pipeline
 
-A) Compute expected results
+G) (G for grader) Compute expected results
 - Given a grader-labXX repo containing an anacapa.json file
   - Parse anacapa.json, and if errors
     - update errors.md and DIE
   - run each of the test cases and store the expected output in github repo results-labXX/expected/
   
+
+A) A Fake job that exists just for testing purposes.
+   It adds a "pending" username/labxx to the pending jobs table and then kicks off B.
+
 B) Compute student actual results
 - Given a labXX-username repo containing a student's submission and the grader-labXX repo
     - make a copy of the anacapa.json in results-labXX/students/username/anacapa.json
