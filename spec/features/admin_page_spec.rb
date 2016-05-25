@@ -36,5 +36,19 @@ describe 'the admin panel view', :type => :feature do
     page.check('admin_toggle_12345')
     page.has_checked_field?('admin_toggle_12345').should be true
   end
-  
+
+  it 'should toggle correctly into non-instructor' do
+    visit '/admin_panel'
+    expect(page).to have_css('#instructor_toggle_12345')
+    page.uncheck('instructor_toggle_12345')
+    page.has_checked_field?('instructor_toggle_12345').should be false
+  end
+
+  it 'should toggle correctly into instructor' do
+    visit '/admin_panel'
+    expect(page).to have_css('#instructor_toggle_12345')
+    page.check('instructor_toggle_12345')
+    page.has_checked_field?('instructor_toggle_12345').should be true
+  end
+
 end
