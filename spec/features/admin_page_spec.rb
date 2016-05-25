@@ -26,13 +26,15 @@ describe 'the admin panel view', :type => :feature do
   it 'should toggle correctly into non-admin' do
     visit '/admin_panel'
     expect(page).to have_css('#admin_toggle_12345')
-    find(:css, '#admin_toggle_12345').set(false)
-    page.has_checked_field?('#admin_toggle_12345').should be false
+    page.uncheck('admin_toggle_12345')
+    page.has_checked_field?('admin_toggle_12345').should be false
   end
 
   it 'should toggle correctly into admin' do
     visit '/admin_panel'
     expect(page).to have_css('#admin_toggle_12345')
-    page.has_checked_field?('#admin_toggle_12345').should be true
+    page.check('admin_toggle_12345')
+    page.has_checked_field?('admin_toggle_12345').should be true
   end
+  
 end
