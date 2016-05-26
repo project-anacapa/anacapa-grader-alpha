@@ -4,7 +4,7 @@ var AdminPanel = function() {
         self.togglePrivileges(this, $(this).data('url'), 'admin', this.checked);
     });
     $('.instructor_toggle').change(function() {
-        console.log('stub');
+        self.togglePrivileges(this, $(this).data('url'), 'instructor', this.checked);
     });
 
     this.togglePrivileges = function(element, url, role, privilege) {
