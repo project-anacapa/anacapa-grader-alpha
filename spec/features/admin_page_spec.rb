@@ -3,7 +3,7 @@ require 'rails_helper.rb'
 describe 'the admin panel view', :type => :feature do
   before do
     @user = FactoryGirl.create(:admin)
-    ApplicationController.any_instance.stub(:current_user).and_return(@user)
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
     @user.save
     login_as(@user, :scope => :user)
 
@@ -27,28 +27,28 @@ describe 'the admin panel view', :type => :feature do
     visit '/admin_panel'
     expect(page).to have_css('#admin_toggle_12345')
     page.uncheck('admin_toggle_12345')
-    page.has_checked_field?('admin_toggle_12345').should be false
+    expect(page).not_to have_checked_field('admin_toggle_12345')
   end
 
   it 'should toggle correctly into admin' do
     visit '/admin_panel'
     expect(page).to have_css('#admin_toggle_12345')
     page.check('admin_toggle_12345')
-    page.has_checked_field?('admin_toggle_12345').should be true
+    expect(page).to have_checked_field('admin_toggle_12345')
   end
 
   it 'should toggle correctly into non-instructor' do
     visit '/admin_panel'
     expect(page).to have_css('#instructor_toggle_12345')
     page.uncheck('instructor_toggle_12345')
-    page.has_checked_field?('instructor_toggle_12345').should be false
+    expect(page).not_to have_checked_field('instructor_toggle_12345')
   end
 
   it 'should toggle correctly into instructor' do
     visit '/admin_panel'
     expect(page).to have_css('#instructor_toggle_12345')
     page.check('instructor_toggle_12345')
-    page.has_checked_field?('instructor_toggle_12345').should be true
+    expect(page).to have_checked_field('instructor_toggle_12345')
   end
 
 end
