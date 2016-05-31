@@ -6,8 +6,6 @@ script:
 before_script:
 - psql -c 'create database anacapa_grader_alpha_test;' -U postgres
 - RAILS_ENV=test bundle exec rake db:migrate --trace
-after_script:
-- codeclimate-test-reporter < lcov.info
 deploy:
   provider: heroku
   api_key:
