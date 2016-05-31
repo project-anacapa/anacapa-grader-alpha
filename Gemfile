@@ -60,3 +60,5 @@ gem 'cancancan'
 gem 'rolify'
 
 gem 'hirb', '0.7.3'
+
+gem "codeclimate-test-reporter", group: :test, require: nil
