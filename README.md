@@ -12,5 +12,5 @@ On Heroku: https://anacapa-grader-alpha.herokuapp.com
 
 # Instructions
 
-* <INSTRUCTIONS/localhost.md>  Running on localhost
+* [INSTRUCTIONS/localhost.md](INSTRUCTIONS/localhost.md)  Running on localhost
 
