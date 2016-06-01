@@ -6,7 +6,7 @@
   * If you have a problem installing `pg`, try running `sudo env ARCHFLAGS='-arch x86_64' gem install pg`
 1. The [`SAMPLE.env`](SAMPLE.env) file in the project root should be copied to `.env` and edited. 
   * You can run `cp SAMPLE.env .env`
-  * Populate the `GITHUB_CLIENT_ID` and `GITHUB_CLIENT_SECRET` with your own Github App configurations (see [/INSTRUCTIONS/github-oauth-configuration.md](/INSTRUCTIONS/github-oauth-configuration.md)
+  * Populate the `GITHUB_CLIENT_ID` and `GITHUB_CLIENT_SECRET` with your own Github App configurations (see [INSTRUCTIONS/oauth-configuration.md](INSTRUCTIONS/oauth-configuration.md)
   * The file `.env` is ignored via the [`.gitignore`](.gitignore) file, since it contains these values that should be kept confidential.
 1. If you are running this for the first time, run `bundle exec rake db:create`
 1. Execute `bundle exec rake db:migrate`
