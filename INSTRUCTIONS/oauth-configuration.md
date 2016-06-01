@@ -15,20 +15,7 @@ Note that the .env file is NOT saved to github, since it contains secret informa
 
 ![OAuth Config Example](/INSTRUCTIONS/oauth_settings_example.png "Example OAuth Configurations")
 
-To run this web server:
 
-1. Fork and/or clone this repo
-1. Ensure you have `postgresql` [installed](https://wiki.postgresql.org/wiki/Detailed_installation_guides) and running on localhost
-1. Execute `bundle install`
-  * If you have a problem installing `pg`, try running
-    * `sudo env ARCHFLAGS='-arch x86_64' gem install pg`
-1. Create a file called `.env` in the project root,
-  * You can run `cp .env.example .env`
-  * Populate the `GITHUB_CLIENT_ID` and `GITHUB_CLIENT_SECRET` with your own Github App configurations (see instructions earlier in this README.md)
-1. If you are running this for the first time, run `rake db:create`
-1. Execute `rake db:migrate`
-1. Execute `rails s`
-1. The rails server should now be running on [http://localhost:3000](http://localhost:3000)
 
 To set initial admin:
 
