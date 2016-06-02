@@ -15,4 +15,5 @@ You must visit one or the other of these pages to obtain values for `GITHUB_CLIE
 
 You must then click on Deploy, then the Pipeline, then you will see the review apps.  It looks, for example, like this:
 
+![Review Apps Example](/INSTRUCTIONS/IMAGES/review_apps_example.png "Example Review App Dashboard")
 
