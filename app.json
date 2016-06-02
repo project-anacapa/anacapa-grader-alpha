@@ -2,6 +2,7 @@
   "name": "anacapa-grader-alpha",
   "description": "Running verison of github.com/project-anacapa/anacapa-grader-alpha",
   "scripts": {
+    "postdeploy": "bundle exec rake db:setup",
   },
   "env": {
     "GITHUB_CLIENT_ID": {
