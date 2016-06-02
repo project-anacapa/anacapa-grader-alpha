@@ -13,4 +13,6 @@ You must visit one or the other of these pages to obtain values for `GITHUB_CLIE
 * To create under your personal github account: https://github.com/settings/developers
 * To create under the project-anacapa organization: https://github.com/organizations/project-anacapa/settings/applications
 
-You 
+You must then click on Deploy, then the Pipeline, then you will see the review apps.  It looks, for example, like this:
+
+
