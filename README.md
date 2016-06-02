@@ -13,4 +13,5 @@ On Heroku: https://anacapa-grader-alpha.herokuapp.com
 # Instructions
 
 * [INSTRUCTIONS/localhost.md](INSTRUCTIONS/localhost.md)  Running on localhost
+* [INSTRUCTIONS/oauth-configuration.md](INSTRUCTIONS/oauth-configuration.md)  Github OAuth Configuration
 
