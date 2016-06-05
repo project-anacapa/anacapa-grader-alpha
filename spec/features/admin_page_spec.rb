@@ -15,7 +15,7 @@ describe 'the admin panel view', :type => :feature do
 
   it 'should go to the admin page if you are an admin' do
     visit '/admin_panel'
-    expect(page).to have_css('body > h1', :text => "Welcome, Admin!")
+    expect(page).to have_css('body > h1', :text => "Welcome, " + @user.name + "!")
   end
   it 'should go back to the homepage if you are not an admin' do
     @user.remove_role :admin

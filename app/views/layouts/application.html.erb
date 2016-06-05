@@ -22,21 +22,23 @@
 
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <% if current_user != nil %>
+            <% if current_user.has_role? :admin %>
+                <p class="navbar-text navbar-right admin" style="font-weight: bold;">Admin</p>
+            <% end %>
+        <% end %>
         <ul class="nav navbar-nav">
-          <% if current_user.has_role? :admin %>
-            <li
-              <% if request.original_fullpath == '/admin_panel' %> class="active"<% end %>
-            >
-              <a href="/admin_panel">Admin Panel <span class="sr-only">(current)</span></a></li>
+          <% if current_user != nil %>
+            <% if current_user.has_role? :admin %>
+              <li
+                <% if request.original_fullpath == '/admin_panel' %> class="active"<% end %>
+              >
+                <a href="/admin_panel">Admin Panel <span class="sr-only">(current)</span></a></li>
+            <% end %>
           <% end %>
         </ul>
-        <% if current_user.has_role? :admin %>
-            <ul class="nav navbar-nav navbar-right">
-              <li><a>Admin</a></li>
-            </ul>
-        <% end %>
-      </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
+      </div>
+    </div>
   </nav>
 <%= yield %>
 
