@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :courses
   resources :admin_panel do
     member do
       # POST /admin_panel/toggle_admin/:id
