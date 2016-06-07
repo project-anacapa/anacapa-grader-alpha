@@ -6,7 +6,9 @@ RSpec.describe Course, type: :model do
   it "has a valid factory" do
     FactoryGirl.create(:course).should be_valid
   end
-  it "is invalid without a deptartment"
+  it "is invalid without a deptartment" do
+    FactoryGirl.build(:course, dept: nil).should_not be_valid
+  end
   it "is invalid without a number"
   it "is invalid without a description"
   it "is invalid without a term"
