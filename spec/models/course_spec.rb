@@ -9,7 +9,13 @@ RSpec.describe Course, type: :model do
   it "is invalid without a deptartment" do
     FactoryGirl.build(:course, dept: nil).should_not be_valid
   end
-  it "is invalid without a number"
-  it "is invalid without a description"
-  it "is invalid without a term"
+  it "is invalid without a number" do
+    FactoryGirl.build(:course, num: nil).should_not be_valid
+  end
+  it "is invalid without a description" do
+    FactoryGirl.build(:course, desc: nil).should_not be_valid
+  end
+  it "is invalid without a term" do
+    FactoryGirl.build(:course, term: nil).should_not be_valid
+  end
 end
