@@ -21,35 +21,56 @@ class CoursesController < ApplicationController
   def edit
   end
 
-  # POST /courses
-  # POST /courses.json
-  def create
-    @course = Course.new(course_params)
-
+  #create: params[:action] = "created", params[:status] = :created, params[:render] = :new
+  #update: params[:action] = "updated", params[:status] = :ok, params[:render] = :edit
+  def create_update
+    if(params[:action] == "created")
+      @course = Course.new(course_params)
+      status = @course.save
+    else
+      status = @course.update(course_params)
+    end
     respond_to do |format|
-      if @course.save
-        format.html { redirect_to @course, notice: 'Course was successfully created.' }
-        format.json { render :show, status: :created, location: @course }
+      if status
+        notice = "Course was successfully " + params[:action]
+        format.html { redirect_to @course, notice: notice }
+        format.json { render :show, status: params[:status], location: @course }
       else
-        format.html { render :new }
+        format.html { render params[:render] }
         format.json { render json: @course.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  # PATCH/PUT /courses/1
-  # PATCH/PUT /courses/1.json
-  def update
-    respond_to do |format|
-      if @course.update(course_params)
-        format.html { redirect_to @course, notice: 'Course was successfully updated.' }
-        format.json { render :show, status: :ok, location: @course }
-      else
-        format.html { render :edit }
-        format.json { render json: @course.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+  # # POST /courses
+  # # POST /courses.json
+  # def create
+  #   @course = Course.new(course_params)
+
+  #   respond_to do |format|
+  #     if @course.save
+  #       format.html { redirect_to @course, notice: 'Course was successfully created.' }
+  #       format.json { render :show, status: :created, location: @course }
+  #     else
+  #       format.html { render :new }
+  #       format.json { render json: @course.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
+
+  # # PATCH/PUT /courses/1
+  # # PATCH/PUT /courses/1.json
+  # def update
+  #   respond_to do |format|
+  #     if @course.update(course_params)
+  #       format.html { redirect_to @course, notice: 'Course was successfully updated.' }
+  #       format.json { render :show, status: :ok, location: @course }
+  #     else
+  #       format.html { render :edit }
+  #       format.json { render json: @course.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
 
   # DELETE /courses/1
   # DELETE /courses/1.json
