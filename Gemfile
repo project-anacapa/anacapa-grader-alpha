@@ -49,6 +49,9 @@ group :test do
   gem 'capybara'
   gem 'rspec-rails', '~> 3.4', '>= 3.4.2'
   gem "factory_girl_rails", "~> 4.0"
+  gem 'faker'
+  gem 'guard-rspec'
+  gem 'launchy'
 end
 
 gem 'devise'
