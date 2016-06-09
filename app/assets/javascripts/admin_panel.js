@@ -1,22 +1,21 @@
 var AdminPanel = function() {
     var self = this;
     $('.admin_toggle').change(function() {
-        self.togglePrivileges(this, $(this).data('url'), 'admin', this.checked);
+        self.togglePrivileges(this, $(this).data('url'), 'site_admin', this.checked);
     });
     $('.instructor_toggle').change(function() {
-        self.togglePrivileges(this, $(this).data('url'), 'instructor', this.checked);
+        self.togglePrivileges(this, $(this).data('url'), 'site_instructor', this.checked);
     });
 
     this.togglePrivileges = function(element, url, role, privilege) {
         $.ajax({
             url: url,
-            type: 'POST',
-            data: {toggle_to: privilege},
-            success: function(data) {
-                console.log(data);
+            type: privilege ? 'PUT' : 'DELETE',
+            success: function() {
+                console.log("success");
             },
             error: function(err) {
-                console.log('errror');
+                console.log('error');
                 console.log(err);
             }
         });

@@ -12,5 +12,7 @@ On Heroku: https://anacapa-grader-alpha.herokuapp.com
 
 # Instructions
 
-* [INSTRUCTIONS/localhost.md](INSTRUCTIONS/localhost.md)  Running on localhost
-
+* [Running on localhost](/INSTRUCTIONS/localhost.md)  
+* [Creating the initial admin user](/INSTRUCTIONS/initial-admin-user.md)	
+* [Configuring Github OAuth](/INSTRUCTIONS/oauth-configuration.md) 
+* [Review Apps](/INSTRUCTIONS/review-apps.md) (temporarily deployments for reviewing pull requests)
