@@ -13,6 +13,9 @@ deploy:
   app: anacapa-grader-alpha
   on:
     repo: project-anacapa/anacapa-grader-alpha
+  run:
+    - "RAILS_ENV=production bundle exec rake db:migrate --trace"
+    - "RAILS_ENV=production bundle exec rake cleanup --trace"
 notifications:
   slack:
     secure: nwAL09FGsE3rx/0gSNVY+CNVyyzEaCMvIa3+a6bciz+JabtpvFo2PSVq3M+vFxaAFtmElKg3eXrjCy4GgFsg8E/YZrXlNeoTMZl2eohBW4gbF7wWWp5SD4bsaAhXGl76O3P/mtIkajI5fBOpIyP2/o0n7yz+GEeDHz8HU6DtDe0o7MwNTRn22s2KARTqCAVSfSfCP0SGOKC3b/0+KjVxs3/IxgOquR2fxfqZHo+uHcXBfcyqsPlPc/1KeYbAXkCd8IFFhTzQKTm727ASD0jqDtH1WcoWHclpBbEYCYQCzexwgpb0ipl9CQlqxvp/OgKL09k/H0EyQliLBopTd2lNgkg/wLOhwXS4AfRXwWefBIV7QdUUMXzKWjJjTt8cDixQR87DyKqXSByxH0QexEw7QQm4Uwuusl5wlHGVlhp5YNaE1cJsQHkS5Q1elYt7jwO5xhObHjuiZoEF0SS9jMOvsDddGTWYDavv1AukZj46Y2Ax4d9ZsQzDfXDrmW49bMqmKRyVKWVKigWyGQ9fkoANZylsh08RyxyQnaJUjbDH/wkVtS9guL2WCIf65U4CVURzIRyNahSiJ+stF9mb7A3EJuM+WtH4GK2O3WLO9Xv7kqHc55ZQqndVMgiBDlbzmkKP7r/9lgZXEtl0/a4DMG2RHc1qyD+uRuX1mY6Mp2lBwaM=
